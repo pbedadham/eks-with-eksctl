@@ -33,10 +33,10 @@ Edit the eksctl-basic-demo.yaml file to include your desired cluster configurati
 Run the following command to create the EKS cluster:
 
 ```
-eksctl create cluster -f eksctl-basic-demo.yaml
+eksctl create cluster -f eksctl-demo-basic.yaml
 ```
 
-This will create an EKS cluster based on the configuration specified in the eksctl-basic-demo.yaml file.
+This will create an EKS cluster based on the configuration specified in the eksctl-demo-basic.yaml file.
 
 Verify that the cluster was created successfully by running the following command:
 
@@ -62,20 +62,20 @@ Access nginx in the browser http://localhost:8080
 Upgrade EKS version
 Edit the config file to the desired version
 ```
-eksctl upgrade cluster -f eksctl-basic-upgrade.yaml
+eksctl upgrade cluster -f eksctl-demo-upgrade.yaml
 kubectl get nodes
 ```
 Scale the Nodegroup
 ```
-eksctl scale nodegroup -f eksctl-basic-scale.yaml
+eksctl scale nodegroup -f eksctl-demo-scale.yaml
 kubectl get nodes
 ```
 ## Delete EKS Cluster
 To delete the cluster, run the following command:
 ```
-eksctl delete cluster -f eksctl-basic-demo.yaml
+eksctl delete cluster -f eksctl-demo-basic.yaml
 ```
 This will delete the EKS cluster along with any associated resources.
 
 ### Conclusion
-This example demonstrates how to deploy an EKS cluster using eksctl. You can customize the cluster configuration in the eksctl-basic-demo.yaml file to meet your specific requirements.
+This example demonstrates how to deploy an EKS cluster using eksctl. You can customize the cluster configuration in the eksctl-demo-basic.yaml file to meet your specific requirements.
