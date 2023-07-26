@@ -51,5 +51,18 @@ eksctl delete cluster -f eksctl-basic-demo.yaml
 ```
 This will delete the EKS cluster along with any associated resources.
 
+## Deploy sample application
+Deploy Nginx application
+```
+kubectl create deploy nginx --image=nginx
+kubectl get pod
+```
+Access the nginx pod externally
+
+```
+kubectl port-forward deploy/nginx 8080:80
+```
+Access nginx in the browser http://localhost:8080
+
 ### Conclusion
 This example demonstrates how to deploy an EKS cluster using eksctl. You can customize the cluster configuration in the eksctl-basic-demo.yaml file to meet your specific requirements.
