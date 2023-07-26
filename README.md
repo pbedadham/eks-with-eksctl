@@ -20,12 +20,12 @@ This repository provides an example of deploying an Amazon Elastic Kubernetes Se
 * [eksctl](https://eksctl.io/introduction/#installation)
 * [AWS access credentials](https://docs.aws.amazon.com/cli/latest/userguide/cli-configure-files.html)
 
-## Steps
+## Creating EKS Cluster
 To create a basic cluster for testing, run:
 ```
 eksctl create cluster --name=eks-demo
 ```
-But, for Production,  create a cluster with a config file; this helps to keep configuration consistency, Reproducibility, Version Control, Modularity and Reusability, Documentation etc.
+But, for Production,  create a cluster with a config file; this helps to keep configuration Consistency, Reproducibility, Version Control, Modularity and Reusability, Documentation etc.
 
 
 Edit the eksctl-basic-demo.yaml file to include your desired cluster configuration. This file specifies the cluster name, region, node group configuration, and any add-ons.
@@ -45,12 +45,6 @@ kubectl get nodes
 ```
 This will list the worker nodes in the cluster.
 
-To delete the cluster, run the following command:
-```
-eksctl delete cluster -f eksctl-basic-demo.yaml
-```
-This will delete the EKS cluster along with any associated resources.
-
 ## Deploy sample application
 Deploy Nginx application
 ```
@@ -63,6 +57,25 @@ Access the nginx pod externally
 kubectl port-forward deploy/nginx 8080:80
 ```
 Access nginx in the browser http://localhost:8080
+
+## Maintain EKS Cluster
+Upgrade EKS version
+Edit the config file to the desired version
+```
+eksctl upgrade cluster -f eksctl-basic-upgrade.yaml
+kubectl get nodes
+```
+Scale the Nodegroup
+```
+eksctl scale nodegroup -f eksctl-basic-scale.yaml
+kubectl get nodes
+```
+## Delete EKS Cluster
+To delete the cluster, run the following command:
+```
+eksctl delete cluster -f eksctl-basic-demo.yaml
+```
+This will delete the EKS cluster along with any associated resources.
 
 ### Conclusion
 This example demonstrates how to deploy an EKS cluster using eksctl. You can customize the cluster configuration in the eksctl-basic-demo.yaml file to meet your specific requirements.
