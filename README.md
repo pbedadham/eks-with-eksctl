@@ -65,11 +65,21 @@ Edit the config file to the desired version
 eksctl upgrade cluster -f eksctl-demo-upgrade.yaml
 kubectl get nodes
 ```
-Scale the Nodegroup
+## Upgrade the Node Group: 
+To perform the upgrade, you will need to create a new node group with the updated configuration and delete the existing node group. 
+This can be achieved using the following steps:
 ```
-eksctl scale nodegroup -f eksctl-demo-scale.yaml
-kubectl get nodes
+eksctl create nodegroup --config-file=eksctl-demo-upgrade.yaml
 ```
+Drain and delete the old node group:
+
+Before proceeding with this step, ensure that you have tested your applications on the new node group and have confirmed that they are functioning as expected.
+
+```
+eksctl drain nodegroup --cluster=basic-cluster --name=ng-1
+eksctl delete nodegroup --cluster=basic-cluster --name=ng-1
+```
+
 ## Delete EKS Cluster
 To delete the cluster, run the following command:
 ```
