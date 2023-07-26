@@ -27,11 +27,8 @@ eksctl create cluster --name=eks-demo
 ```
 But, for Production,  create a cluster with a config file; this helps to keep configuration consistency, Reproducibility, Version Control, Modularity and Reusability, Documentation etc.
 
-Clone this repository to your local machine.
 
-Open a terminal window and navigate to the repository directory.
-
-Edit the eksctl-demo.yaml file to include your desired cluster configuration. This file specifies the cluster name, region, node group configuration, and any add-ons.
+Edit the eksctl-basic-demo.yaml file to include your desired cluster configuration. This file specifies the cluster name, region, node group configuration, and any add-ons.
 
 Run the following command to create the EKS cluster:
 
@@ -39,7 +36,7 @@ Run the following command to create the EKS cluster:
 eksctl create cluster -f eksctl-basic-demo.yaml
 ```
 
-This will create an EKS cluster based on the configuration specified in the eksctl-demo.yaml file.
+This will create an EKS cluster based on the configuration specified in the eksctl-basic-demo.yaml file.
 
 Verify that the cluster was created successfully by running the following command:
 
