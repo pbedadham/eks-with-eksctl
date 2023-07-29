@@ -62,7 +62,7 @@ Access nginx in the browser http://localhost:8080
 Upgrade EKS version
 Edit the config file to the desired version
 ```
-eksctl upgrade cluster -f eksctl-demo-upgrade.yaml
+eksctl upgrade cluster -f eksctl-demo-upgrade.yaml --approve
 kubectl get nodes
 ```
 ## Upgrade the Node Group: 
