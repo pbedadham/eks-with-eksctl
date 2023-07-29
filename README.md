@@ -76,8 +76,10 @@ Drain and delete the old node group:
 Before proceeding with this step, ensure that you have tested your applications on the new node group and have confirmed that they are functioning as expected.
 
 ```
-eksctl drain nodegroup --cluster=basic-cluster --name=ng-1
-eksctl delete nodegroup --cluster=basic-cluster --name=ng-1
+eksctl drain nodegroup --cluster=eks-demo --name=ng-1
+eksctl delete nodegroup --cluster=eks-demo --name=ng-1
+or
+eksctl delete nodegroup -f eksctl-demo-upgrade --only-missing --approve
 ```
 
 ## Delete EKS Cluster
