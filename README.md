@@ -15,9 +15,9 @@ This repository provides an example of deploying an Amazon Elastic Kubernetes Se
   * Seamless Updates: eksctl simplifies updates and upgrades of your EKS cluster. It provides straightforward commands to update the Kubernetes version or change the node group configurations.
 
 ## Prerequisites
-* [kubectl](https://kubernetes.io/docs/tasks/tools/)
+* [kubectl](https://docs.aws.amazon.com/eks/latest/userguide/install-kubectl.html)
 * [aws-cli](https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html)
-* [eksctl](https://eksctl.io/introduction/#installation)
+* [eksctl](https://docs.aws.amazon.com/eks/latest/userguide/eksctl.html)
 * [AWS access credentials](https://docs.aws.amazon.com/cli/latest/userguide/cli-configure-files.html)
 
 ## Creating EKS Cluster
