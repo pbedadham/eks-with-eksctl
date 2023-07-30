@@ -77,4 +77,3 @@ managedNodeGroups:
     ebsOptimized: true
     volumeEncrypted: true
     privateNetworking: true #EKS worker nodes are deployed in private subnets 
-    spot: true
