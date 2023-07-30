@@ -6,7 +6,7 @@ metadata:
   region: us-west-2
   version: "1.26"
 
-managednodeGroups:
+managedNodeGroups:
   - name: ng-2
     instanceType: m5.large
     labels: { role: workers }
