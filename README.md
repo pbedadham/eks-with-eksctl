@@ -79,7 +79,7 @@ Before proceeding with this step, ensure that you have tested your applications 
 eksctl drain nodegroup --cluster=eks-demo --name=ng-1
 eksctl delete nodegroup --cluster=eks-demo --name=ng-1
 or
-eksctl delete nodegroup -f eksctl-demo-upgrade --only-missing --approve
+eksctl delete nodegroup -f eksctl-demo-upgrade.yaml --only-missing --approve
 ```
 
 ## Delete EKS Cluster
