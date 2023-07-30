@@ -6,11 +6,10 @@ metadata:
   region: us-west-2
   version: "1.26"
 
-nodeGroups:
+managednodeGroups:
   - name: ng-2
     instanceType: m5.large
     labels: { role: workers }
     desiredCapacity: 2
     volumeSize: 20
     privateNetworking: true
-    spot: true
